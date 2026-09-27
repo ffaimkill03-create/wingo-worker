@@ -1,0 +1,13 @@
+{
+  "name": "voidteam-wingo-cloud-collector",
+  "version": "1.0.0",
+  "description": "24/7 Cloud Background Game Data Collector & API Server for Void Team Wingo Analyzer",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {},
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
