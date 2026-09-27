@@ -51,13 +51,16 @@ memoryHistory = loadLocalStore();
 async function fetchBatch() {
     const url = `${HISTORY_API_URL}?ts=${Date.now()}`;
     const headers = {
-        'accept': 'application/json, text/plain, */*',
-        'Cache-Control': 'no-cache, no-store, must-revalidate',
-        'Pragma': 'no-cache',
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
+        'Accept': 'application/json, text/plain, */*',
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36',
+        'Origin': 'https://bdgwin.org',
+        'Referer': 'https://bdgwin.org/',
+        'Accept-Language': 'en-US,en;q=0.9',
+        'Cache-Control': 'no-cache',
+        'Pragma': 'no-cache'
     };
 
-    const res = await fetch(url, { headers, signal: AbortSignal.timeout(6000) });
+    const res = await fetch(url, { headers, signal: AbortSignal.timeout(8000) });
     if (!res.ok) throw new Error(`HTTP ${res.status}: ${res.statusText}`);
     const json = await res.json();
 
